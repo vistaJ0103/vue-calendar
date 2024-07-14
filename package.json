@@ -20,7 +20,8 @@
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "vue": "latest"
+    "vue": "latest",
+    "vue-horizontal-scroll": "^0.2.4"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
