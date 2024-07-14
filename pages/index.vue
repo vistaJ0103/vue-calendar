@@ -110,24 +110,26 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
       class="relative w-full max-w-2xl"
       @init-api="(val) => (emblaThumbnailApi = val)"
     >
-      <CarouselContent>
-        <CarouselItem v-for="(date, index) in dates" :key="index">
-          <div class="p-1">
-            <Card>
-              <CardContent
-                class="flex aspect-square items-center justify-center p-6 bg-[#8A8A8A]"
-              >
-                <span class="text-4xl font-semibold">{{
-                  date.toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                  })
-                }}</span>
-              </CardContent>
-            </Card>
-          </div>
-        </CarouselItem>
-      </CarouselContent>
+      <div class="horizon_scrollbar1 overflow-x-visible">
+        <CarouselContent class="">
+          <CarouselItem v-for="(date, index) in dates" :key="index">
+            <div class="p-1">
+              <Card>
+                <CardContent
+                  class="flex aspect-square items-center justify-center p-6 bg-[#8A8A8A]"
+                >
+                  <span class="text-4xl font-semibold">{{
+                    date.toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                    })
+                  }}</span>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        </CarouselContent>
+      </div>
     </Carousel>
   </div>
 </template>
@@ -147,6 +149,24 @@ watchOnce(emblaMainApi, (emblaMainApi) => {
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+}
+.horizon_scrollbar1 {
+  ::-webkit-scrollbar {
+    height: 8px;
+    display: none;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 0.25rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 0.25rem;
+    width: var(--scrollbar-thumb-width);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
   }
 }
 </style>
